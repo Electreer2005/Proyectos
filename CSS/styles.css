@@ -1,1 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+:root{
+  --Primario: #1f1f1f;
+  --Secundario: #0000003a;
+  --Background: linear-gradient(to bottom, #000, rgb(3, 1, 94));
 
+  --color-text: #fff;
+
+  --Fuente: "Cal Sans", sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--Fuente);
+  text-decoration: none;
+}
+
+body{
+  background: var(--Background);
+  color: var(--color-text);
+  padding: 20px 25px;
+}
+
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--Primario);
+  padding: 20px 25px;
+  border-radius: 10px;
+}
+
+.logo img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover{
+  transform: scale(1.2);
+}
+
+.nav-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.nav-horizontal li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-horizontal li a::before,
+.nav-horizontal li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f9d342;
+  transition: width 0.4s ease;
+}
+
+.nav-horizontal li a::before {
+  top: 0; /* Línea arriba */
+  background-color: #f9d342;
+}
+
+.nav-horizontal li a::after {
+  bottom: 0; /* Línea abajo */
+  background-color: #f39c12;
+}
+
+.nav-horizontal li a:hover {
+  color: #f9d342;
+}
+
+.nav-horizontal li a:hover::before,
+.nav-horizontal li a:hover::after {
+  width: 100%;
+}
+
+.nav-horizontal i {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.nav-horizontal li a:hover i {
+  transform: scale(1.2);
+}
+
+.active {
+  position: relative;
+  padding: 20px 30px;
+  background-color: #111; /* Fondo más cinematográfico */
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  color: #f9d342;
+  font-weight: 600;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Líneas superior e inferior */
+.active::before,
+.active::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: #f9d342;
+  transition: transform 0.3s ease;
+}
+
+.active::before {
+  top: 0;
+  transform: scaleX(1);
+}
+
+.active::after {
+  bottom: 0;
+  transform: scaleX(1);
+}
+
+/* Sutil resplandor al pasar el mouse */
+.active:hover {
+  box-shadow: 0 0 15px rgba(249, 211, 66, 0.5);
+  background-color: #1a1a1a;
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+ 
+}
+
+.icons i{
+  font-size: 1.5em;
+  color: var(--color-text);
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  background: var(--Secundario);
+  padding: 30px 35px;
+  max-height: 600px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.32);
+}
+
+/* Footer */
+footer {
+  background: #222227;
+  color: #fff;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 10px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo-footer {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.social-media a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-media a:hover {
+  color: #64b5f6;
+}
+
+.contacto i,
+.horarios i,
+.footer-bottom i {
+  margin-right: 8px;
+  color: #64b5f6;
+}
+
+.contacto p,
+.horarios p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #ccc;
+}
